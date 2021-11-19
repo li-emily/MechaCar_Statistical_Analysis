@@ -44,19 +44,3 @@ t.test((subset(suspension_coil_df, Manufacturing_Lot == "Lot2"))$PSI, mu = 1500)
 
 t.test((subset(suspension_coil_df, Manufacturing_Lot == "Lot3"))$PSI, mu = 1500)
 
-#deliverable 4
-
-#create correlation matrix for car_mpg_df
-
-library(corrplot)
-df_cor <- cor(car_mpg_df)
-corrplot(df_cor, method='number')
-
-#linear regression model for vehicle length & mpg
-lm(mpg ~ vehicle_length, data=car_mpg_df)
-
-#summary stats
-summary(lm(mpg ~ vehicle_length, data=car_mpg_df))
-
-#add in ground_clearance
-summary(lm(mpg ~ vehicle_length + ground_clearance, data=car_mpg_df))
